@@ -3,10 +3,12 @@ function Person () {
   this.lastName = '';
   this.setFirst = function(first){
     this.valid(first);
+    this.isStr(first);
     this.firstName = first;
   }
   this.setLast = function(last){
     this.valid(last);
+    this.isStr(last);
     this.lastName = last;
   }
   this.valid = function(name){
@@ -14,6 +16,14 @@ function Person () {
   }
   this.getFullName = function(){
     return this.firstName + ' ' + this.lastName;
+  }
+  this.isStr = function(name){
+    if (typeof name === 'string'){
+      return true;
+    } else {
+      console.log('not a string');
+      return false;
+    }
   }
 }
 
